@@ -29,4 +29,5 @@ remote: Resolving deltas: 100% (128/128), done.
 To https://github.com/wenchm/Demo14_2_SD_FATFS_DMA.git
    4d8f590..d04b9ce  main -> main
 
-# 已经关闭CRLF自动转换和gitignore。
+# 已经全局关闭CRLF自动转换；
+# 已经全局设置gitignore；
