@@ -1,0 +1,6 @@
+../Core/Src/main.c:74:5:main	2080	static
+../Core/Src/main.c:296:6:SystemClock_Config	88	static
+../Core/Src/main.c:341:6:SDCard_ShowInfo	48	static
+../Core/Src/main.c:371:5:__io_putchar	16	static
+../Core/Src/main.c:379:9:BSP_SD_IsDetected	8	static
+../Core/Src/main.c:395:6:Error_Handler	4	static,ignoring_inline_asm

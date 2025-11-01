@@ -1,0 +1,131 @@
+Demo14_2: FatFS on SD card(DMA).
+
+SD has been present.
+FatFS is mounted, OK.
+
+[S2]KeyUp   =Format SD card. 
+[S1]KeyRight=SD card info. 
+[S4]KeyLeft =FAT disk info. 
+[S3]KeyDown =Next menu page. 
+
+
+Formating (10secs)...
+Format OK, to reset.
+Reselect menu item or reset.
+
+
+*** SD card info *** 
+
+Card Type= 1 
+Card Version= 1 
+Card Class= 1461 
+Relative Card Address= 4660 
+Block Count= 15126528 
+Block Size(Bytes)= 512 
+LogiBlockCount= 15126528 
+LogiBlockSize(Bytes)= 512 
+SD Card Capacity(MB)= 7386 
+
+Reselect menu item or reset.
+
+
+*** FAT disk info ***.
+
+FAT type=  3
+[1=FAT12,2=FAT16,3=FAT32,4=exFAT] 
+Sector size(bytes)=  512
+Cluster size(sectors)=  64
+Total cluster count=  236321
+Total sector count=  15124544
+Total space(MB)=  7385
+Free cluster count=  236320
+Free sector count=  15124480
+Free space(MB)=  7385
+Get FAT disk info OK.
+Reselect menu item or reset.
+
+
+test read/write SD with FATFS universal function.
+[S2]KeyUp   =Write files.
+[S3]KeyDown =Get a file info.
+[S4]KeyLeft =Read a TXT file and a BIN file.
+[S1]KeyRight=Next menu page.
+
+Write file OK: DMA_readme.txt
+Write file OK: DMA_help.txt
+Write file OK: DMA_ADC2000.dat
+Write file OK: DMA_ADC1000.dat
+Reselect menu item or reset.
+
+File info of:  DMA_ADC1000.dat
+File size(DWORD)= 418
+File fdate(WORD)= 0
+File ftime(WORD)= 0
+File attribute=  32
+File Name=  DMA_ADC1000.dat
+RTC Date= 2025- 7-25
+RTC Time= 12:47:42
+File Date= 2025- 7-25
+File Time= 12:47: 2
+Reselect menu item or reset.
+
+Read a TXT file:
+Reading TXT file: Line1: Hello, FatFS
+Reading TXT file: Line2: UPC, AnHui Hefei
+Reading TXT file: Line3: Date: 2025-7-14
+Read a BIN file:
+Reading BIN file: ADC1-IN5
+Sampling freq: 2000
+Point count: 30
+Reselect menu item or reset.
+
+
+test erase/SD info/read/write with specialized SD_Function.
+[S2]KeyUp   =SD card info. 
+[S3]KeyDown =Erase 0-10 blocks. 
+[S4]KeyLeft =Write block. 
+[S1]KeyRight=Read block. 
+
+
+*** SD card info *** 
+
+Card Type= 1 
+Card Version= 1 
+Card Class= 1461 
+Relative Card Address= 4660 
+Block Count= 15126528 
+Block Size(Bytes)= 512 
+LogiBlockCount= 15126528 
+LogiBlockSize(Bytes)= 512 
+SD Card Capacity(MB)= 7386 
+
+Reselect menu item or reset.
+
+
+*** Erasing blocks *** 
+
+Erasing blocks,OK. 
+Blocks 0-10 is erased. 
+GetCardState()= 0 
+Reselect menu item or reset.
+
+
+*** DMA Writing blocks *** 
+
+Writing block 6. 
+Data in [10:15] is: 10 , 11, 12, 13, 14, 15
+ SD_write() is to be called. 
+DMA write complete. 
+SD_write() DMA Callback is called. 
+Reselect menu item or reset.
+
+
+*** DMA Reading blocks *** 
+
+
+HAL_SD_ReadBlocks_DMA() is to be called. 
+DMA read complete. 
+SD_read() DMA Callback is called. 
+Data in [10:15] is: 10, 11, 12, 13, 14, 15
+Reselect menu item or reset.
+
